@@ -41,8 +41,6 @@ variable "docdb_username" {
 
 variable "docdb_password" {}
 
-variable "pgsql_password" {}
-
 
 variable "environment_variables" {
   description = "Map with environment variables for the function"
