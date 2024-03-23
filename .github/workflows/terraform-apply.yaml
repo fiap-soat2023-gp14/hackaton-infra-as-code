@@ -7,7 +7,7 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "FiapSOAT2-gp14"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "fiap-hackaton-infra-as-code"
+  TF_WORKSPACE: "soat23-gp14-hackaton-infra-as-code"
   CONFIG_DIRECTORY: "./"
 
 jobs:
