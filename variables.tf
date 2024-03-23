@@ -41,6 +41,17 @@ variable "docdb_username" {
 
 variable "docdb_password" {}
 
+variable "email_from" {}
+
+variable "email_password" {}
+
+variable "database_name" {
+  default = "fiapHackaton"
+}
+
+variable "email_smtp" {
+  default = "smtp-mail.outlook.com"
+}
 
 variable "environment_variables" {
   description = "Map with environment variables for the function"
