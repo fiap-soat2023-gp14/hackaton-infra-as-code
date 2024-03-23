@@ -28,7 +28,7 @@ resource "aws_ecs_task_definition" "ecs-td-fiap-timesheet" {
       environment = [
         {
           name  = "MONGODB_CONNECTION_STRING"
-          value = "mongodb://${aws_docdb_cluster.service.master_username}:${aws_docdb_cluster.service.master_password}@${aws_docdb_cluster.service.endpoint}:${aws_docdb_cluster.service.port}/fiapHackaton?tls=true&retryWrites=false"
+          value = "mongodb://${aws_docdb_cluster.service.master_username}:${aws_docdb_cluster.service.master_password}@${aws_docdb_cluster.service.endpoint}:${aws_docdb_cluster.service.port}/${var.database_name}?tls=true&retryWrites=false"
         },
         {
           name  = "CLUSTER_URL"
@@ -39,11 +39,11 @@ resource "aws_ecs_task_definition" "ecs-td-fiap-timesheet" {
           value = "${var.region}"        
         },
         {
-          name  = "AWS_REPORT_QUEUE"
+          name  = "AWS_REPORTS_QUEUE"
           value = "${aws_sqs_queue.report_request_queue.name}"        
         },
         {
-          name  = "AWS_PEDIDOS_QUEUE_URL"
+          name  = "AWS_REPORTS_QUEUE_URL"
           value =  "${aws_sqs_queue.report_request_queue.id}"        
         }
       ]

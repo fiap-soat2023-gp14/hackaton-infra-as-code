@@ -30,7 +30,11 @@ resource "aws_ecs_task_definition" "ecs-td-fiap-report" {
           name  = "CLUSTER_URL"
           value = "${aws_apigatewayv2_api.apigw_http_endpoint.api_endpoint}"        
         },
-          {
+         {
+          name  = "MONGODB_CONNECTION_STRING"
+          value = "mongodb://${aws_docdb_cluster.service.master_username}:${aws_docdb_cluster.service.master_password}@${aws_docdb_cluster.service.endpoint}:${aws_docdb_cluster.service.port}/${var.database_name}?tls=true&retryWrites=false"
+        },
+        {
           name  = "AWS_REGION"
           value = "${var.region}"        
         },
@@ -44,15 +48,15 @@ resource "aws_ecs_task_definition" "ecs-td-fiap-report" {
         },
         {
           name  = "EMAIL_FROM"
-          value = ""       
+          value = "${var.email_from}"       
         },
         {  
           name  = "EMAIL_PASSWORD"
-          value = ""        
+          value = "${var.email_password}"        
         },
         {
           name  = "EMAIL_SMTP"
-          value = ""        
+          value = "${var.email_smtp}"        
         }
       ]
       logConfiguration = {
