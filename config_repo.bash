@@ -2,8 +2,8 @@
 
 echo "ECR Configuration"
 
-ecr_timesheet="ecr-fiap-hacka-time-sheet"
-ecr_report="ecr-fiap-hacka-report"
+# ecr_timesheet="ecr-fiap-hacka-time-sheet"
+# ecr_report="ecr-fiap-hacka-report"
 ecr_lambda="ecr-lambda-project"
 
 ecr_nro="495428969620"
@@ -22,7 +22,7 @@ ecrVarMap[$ecr_lambda]=$ecr_nro".dkr.ecr.us-east-1.amazonaws.com/ecr-lambda-proj
 declare -A pathVarMap
 pathVarMap[$ecr_timesheet]="/home/silverton/Projects/hackaton-time-sheet"
 pathVarMap[$ecr_report]="/home/silverton/Projects/hackaton-reports"
-pathVarMap[$ecr_lambda]="/home/silverton/Projects/hackaton-serverless"
+pathVarMap[$ecr_lambda]="/home/silverton/Projects/soat23-gp14-serverless"
 
 if [ "$1" == "push" ]
     then
