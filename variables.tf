@@ -29,11 +29,11 @@ variable "cloudwatch_logs_retention" {
 }
 
 variable "sufix" {
-  default = "fiap-project-hackaton"
+  default = "fiap-project"
 }
 
 variable "domain_name" {
-  default = "soat2-gp-14-hackaton"
+  default = "soat2-gp-14"
 }
 variable "docdb_username" {
   default = "fiapapi"
@@ -62,6 +62,6 @@ variable "environment_variables" {
 }
 
 variable "ecr_repository_code" {
-  default = "495428969620" //FIXME: change to new ecr?
+  default = "495428969620" 
 }
   
