@@ -22,7 +22,7 @@ ecrVarMap[$ecr_lambda]=$ecr_nro".dkr.ecr.us-east-1.amazonaws.com/ecr-lambda-proj
 declare -A pathVarMap
 pathVarMap[$ecr_timesheet]="/home/silverton/Projects/hackaton-time-sheet"
 pathVarMap[$ecr_report]="/home/silverton/Projects/hackaton-reports"
-pathVarMap[$ecr_lambda]="/home/silverton/Projects/shackaton-serverless"
+pathVarMap[$ecr_lambda]="/home/silverton/Projects/hackaton-serverless"
 
 if [ "$1" == "push" ]
     then
